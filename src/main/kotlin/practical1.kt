@@ -1,7 +1,4 @@
-fun Fact(no: Int):Long{
-    return if(no==1) no.toLong()        // terminate condition
-    else no*Fact(no-1)
-}
+
 fun main() {
     println("Hello World!")
 
@@ -55,7 +52,7 @@ fun main() {
     val branch: String= readLine()!!
     print("Enter your Class: ")
     val cls: String= readLine()!!
-    print("Enter your CLG name: ")
+    print("Enter your College name: ")
     val clg: String= readLine()!!
     print("Enter your University name: ")
     val uni: String= readLine()!!
@@ -129,7 +126,25 @@ fun main() {
     println(" Division: $x / $y / $z = $DIV")
 
     println("Practical 1.7")
-    println("Enter no to find it's Factorial = ")
+    println("Enter a number to find it's Factorial: ")
     val No: Int = readLine()!!.toInt()
     println("Factorial of $No is: "+Fact(No))
+
+    print("Enter a number you want it's factorial: ")
+    val n = readLine()!!.toInt()
+    println("Factorial using Recursion " + recursionFact(n))
+    println("Factorial using tailrec " + fact(n))
+}
+fun recursionFact(n: Int): Int {
+    if (n == 1 || n == 0) {
+        return 1
+    }
+    return n * recursionFact(n - 1)
+}
+tailrec fun fact(n: Int, temp: Int = 1): Int {
+    return if (n == 1) {
+        temp
+    } else {
+        fact(n - 1, temp * n)
+    }
 }
