@@ -126,10 +126,6 @@ fun main() {
     println(" Division: $x / $y / $z = $DIV")
 
     println("Practical 1.7")
-    println("Enter a number to find it's Factorial: ")
-    val No: Int = readLine()!!.toInt()
-    println("Factorial of $No is: "+Fact(No))
-
     print("Enter a number you want it's factorial: ")
     val n = readLine()!!.toInt()
     println("Factorial using Recursion " + recursionFact(n))
