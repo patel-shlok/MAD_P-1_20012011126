@@ -1,4 +1,3 @@
-
 fun main() {
     println("Hello World!")
 
@@ -124,6 +123,7 @@ fun main() {
     println(" Subtraction: $x - $y - $z = $SUB")
     println(" Multiplication: $x * $y * $z = $MUL")
     println(" Division: $x / $y / $z = $DIV")
+
 
     println("Practical 1.7")
     print("Enter a number you want it's factorial: ")
