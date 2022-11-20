@@ -144,3 +144,211 @@ tailrec fun fact(n: Int, temp: Int = 1): Int {
         fact(n - 1, temp * n)
     }
 }
+
+
+
+/*
+//Q8
+fun main() {
+    print("Please enter size of array:")
+    val input1 = readLine()!!
+    val array_size: Int = input1.toInt()
+    val array1 = Array<Int>(array_size) { 0 }
+    val array2 = array1
+    println("Please enter elements")
+    for (i in 0..array_size - 1) {
+        print("arr[$i]=")
+        array1.set(i, readLine()!!.toInt())
+    }
+    var temp: Int
+    for (i in 0..array_size - 1) {
+        for (j in 0..array_size - 1) {
+            if (array1[i] <= array1[j]) {
+                temp = array1[i]
+                array1[i] = array1[j]
+                array1[j] = temp
+            }
+        }
+    }
+
+    println("#Method 1 - Without using inbuilt function")
+    println("----Sorted Array---- ")
+    for (i in 0..array_size - 1) {
+        println("arr[$i]=" + array1[i])
+    }
+    println("#Method 2 - Using inbuilt function")
+    println("----Sorted Array---- ")
+    array2.sort()
+    for (i in 0..array_size - 1) {
+        println("arr[$i]=" + array2[i])
+    }
+}
+
+
+
+
+
+
+
+
+//Q9
+fun main() {
+    print("Please enter size of array:")
+    val array_size: Int = readLine()!!.toInt()
+    val array1 = Array<Int>(array_size) { 0 }
+    for (i in 0..array_size - 1) {
+        print("arr[$i]=")
+        array1.set(i, readLine()!!.toInt())
+    }
+    var max = array1[0]
+    var min = array1[0]
+    for (i in 0..array_size - 1) {
+        if (array1[i] >= max) {
+            max = array1[i]
+        }
+        if(array1[i]<=min)
+        {
+            min = array1[i]
+        }
+    }
+    println("Max number in given array is: $max")
+    println("Min number in given array is: $min")
+}
+
+
+
+
+
+
+
+
+
+
+//Q10
+fun main(){
+println("Please enter the elements in Array A")
+val A = Array(3) { IntArray(3) }
+val B = Array(3) { IntArray(3) }
+val C = Array(3) { IntArray(3) }
+val D = Array(3) { IntArray(3) }
+for (i in 0..2) {
+    for (j in 0..2) {
+        print("A[$i][$j]=")
+        A[i][j] = readLine()!!.toInt()
+    }
+}
+println("---------------------------------")
+println("Please enter the elements in Array B")
+for (i in 0..2) {
+    for (j in 0..2) {
+        print("B[$i][$j]=")
+        B[i][j] = readLine()!!.toInt()
+    }
+}
+for (i in 0..2) {
+    for (j in 0..2) {
+        C[i][j] = A[i][j] + B[i][j]
+    }
+}
+for (i in 0..2) {
+    for (j in 0..2) {
+        D[i][j] = A[i][j] - B[i][j]
+    }
+}
+println("-----------------Addition----------------------")
+for (i in 0..2) {
+    for (j in 0..2) {
+        print(A[i][j])
+        print(" ")
+    }
+    print("\n")
+}
+println("  + ")
+for (i in 0..2) {
+    for (j in 0..2) {
+        print(B[i][j])
+        print(" ")
+    }
+    print("\n")
+}
+println("------")
+println("------")
+for (i in 0..2) {
+    for (j in 0..2) {
+        print(C[i][j])
+        print(" ")
+    }
+    print("\n")
+}
+println("-----------------Subtraction----------------------")
+for (i in 0..2) {
+    for (j in 0..2) {
+        print(A[i][j])
+        print(" ")
+    }
+    print("\n")
+}
+println("  -  ")
+for (i in 0..2)
+{
+    for (j in 0..2) {
+        print(B[i][j])
+        print(" ")
+    }
+    print("\n")
+}
+println("------")
+println("------")
+for (i in 0..2) {
+    for (j in 0..2) {
+        print(D[i][j])
+        print(" ")
+    }
+    print("\n")
+}
+
+
+println("-----------------Multiplication----------------------")
+val r1 = 2
+val c1 = 3
+val r2 = 3
+val c2 = 2
+val firstMatrix = arrayOf(intArrayOf(3, -2, 5), intArrayOf(3, 0, 4))
+val secondMatrix = arrayOf(intArrayOf(2, 3), intArrayOf(-9, 0), intArrayOf(0, 4))
+
+// Mutliplying Two matrices
+val product = Array(r1) { IntArray(c2) }
+for (i in 0..r1 - 1) {
+    for (j in 0..c2 - 1) {
+        for (k in 0..c1 - 1) {
+            product[i][j] += firstMatrix[i][k] * secondMatrix[k][j]
+        }
+    }
+}
+
+// Displaying the result
+for (row in firstMatrix) {
+    for (column in row) {
+        print("$column    ")
+    }
+    println()
+}
+println("  *  ")
+for (row in secondMatrix) {
+    for (column in row) {
+        print("$column    ")
+    }
+    println()
+}
+
+println("------")
+println("------")
+println("Product of two matrices is: ")
+
+for (row in product) {
+    for (column in row) {
+        print("$column    ")
+    }
+    println()
+}
+}
